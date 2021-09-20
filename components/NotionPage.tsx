@@ -9,7 +9,7 @@ import BodyClassName from 'react-body-classname'
 import useDarkMode from 'use-dark-mode'
 import { PageBlock } from 'notion-types'
 
-import { Tweet, TwitterContextProvider } from 'react-static-tweets'
+import { Tweet, EmailContextProvider } from 'react-static-tweets'
 
 // core notion renderer
 import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x'
@@ -159,7 +159,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   }
 
   return (
-    <TwitterContextProvider
+    <EmailContextProvider
       value={{
         tweetAstMap: (recordMap as any).tweetAstMap || {},
         swrOptions: {
@@ -174,25 +174,25 @@ export const NotionPage: React.FC<types.PageProps> = ({
         <meta property='og:title' content={title} />
         <meta property='og:site_name' content={site.name} />
 
-        <meta name='twitter:title' content={title} />
-        <meta property='twitter:domain' content={site.domain} />
+        <meta name='email:title' content={title} />
+        <meta property='email:domain' content={site.domain} />
 
-        {config.twitter && (
-          <meta name='twitter:creator' content={`@${config.twitter}`} />
+        {config.email && (
+          <meta name='email:creator' content={`@${config.email}`} />
         )}
 
         {socialDescription && (
           <>
             <meta name='description' content={socialDescription} />
             <meta property='og:description' content={socialDescription} />
-            <meta name='twitter:description' content={socialDescription} />
+            <meta name='email:description' content={socialDescription} />
           </>
         )}
 
         {socialImage ? (
           <>
-            <meta name='twitter:card' content='summary_large_image' />
-            <meta name='twitter:image' content={socialImage} />
+            <meta name=':card' content='summary_large_image' />
+            <meta name='email:image' content={socialImage} />
             <meta property='og:image' content={socialImage} />
           </>
         ) : (
@@ -203,7 +203,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
           <>
             <link rel='canonical' href={canonicalPageUrl} />
             <meta property='og:url' content={canonicalPageUrl} />
-            <meta property='twitter:url' content={canonicalPageUrl} />
+            <meta property='email:url' content={canonicalPageUrl} />
           </>
         )}
 
@@ -277,6 +277,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
       />
 
       <GitHubShareButton />
-    </TwitterContextProvider>
+    </EmailContextProvider>
   )
 }
