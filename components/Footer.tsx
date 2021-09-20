@@ -41,11 +41,11 @@ export const Footer: React.FC<{
       ) : null}
 
       <div className={styles.social}>
-        {config.twitter && (
+        {config.email && (
           <a
             className={styles.twitter}
-            href={`https://twitter.com/${config.twitter}`}
-            title={`Twitter @${config.twitter}`}
+            href={`${config.email}`}
+            title={`E-mail @${config.email}`}
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -62,18 +62,6 @@ export const Footer: React.FC<{
             rel='noopener noreferrer'
           >
             <FaGithub />
-          </a>
-        )}
-
-        {config.linkedin && (
-          <a
-            className={styles.linkedin}
-            href={`https://www.linkedin.com/in/${config.linkedin}`}
-            title={`LinkedIn ${config.author}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaLinkedin />
           </a>
         )}
       </div>
