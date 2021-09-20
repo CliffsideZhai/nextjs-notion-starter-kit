@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FaEmail, FaGithub, FaLinkedin } from 'react-icons/fa'
+import {FaGithub} from 'react-icons/fa'
 import { IoSunnyOutline, IoMoonSharp } from 'react-icons/io5'
 import * as config from 'lib/config'
 
@@ -41,18 +41,6 @@ export const Footer: React.FC<{
       ) : null}
 
       <div className={styles.social}>
-        {config.email && (
-          <a
-            className={styles.twitter}
-            href={`${config.email}`}
-            title={`E-mail :${config.email}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaEmail />
-          </a>
-        )}
-
         {config.github && (
           <a
             className={styles.github}
